@@ -6,6 +6,7 @@ import java.util.stream.Stream;
 
 import javax.annotation.PostConstruct;
 
+import com.javatechie.spring.aop.api.advice.TrackExecutionTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,10 +25,15 @@ public class ProductService {
 				.collect(Collectors.toList()));
 	}
 
+	@TrackExecutionTime
 	public List<Product> addProduct(List<Product> products) {
 		return repository.saveAll(products);
 	}
 
+	/**
+	 * Used this annotation to log the time taken by this method to execute.
+	 */
+	@TrackExecutionTime
 	public List<Product> findAllProducts() {
 		return repository.findAll();
 	}

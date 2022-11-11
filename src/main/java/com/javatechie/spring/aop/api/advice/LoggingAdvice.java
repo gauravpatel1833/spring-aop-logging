@@ -43,7 +43,7 @@ public class LoggingAdvice {
 		log.info("method invoked " + className + " : " + methodName + "()" + " arguments : "
 				+ mapper.writeValueAsString(array));
 
-		//To get the return object from the method
+		//To get the return object from the method when method invocation is completed
 		Object object = pjp.proceed();
 		log.info(className + " : " + methodName + "()" + "Response : "
 				+ mapper.writeValueAsString(object));
