@@ -4,3 +4,4 @@ This repo contain implementation of spring aop logging framework. It will use ce
 For implementation:
 1. We need to add spring aop dependency.
 2. Implement LoggingAdvice with @Aspect which will contain the pointcut and advice for centralized logging.
+3. ExecutionTimeTrackerAdvice Advice will track time taken by method to execute with the help of custom annotation @TrackExecutionTime
