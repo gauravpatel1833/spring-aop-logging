@@ -35,6 +35,7 @@ public class ProductService {
 	 */
 	@TrackExecutionTime
 	public List<Product> findAllProducts() {
+		//int i = 1/0;
 		return repository.findAll();
 	}
 
